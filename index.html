@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DLE de personagens do RPG">
+  <title>Quem é o personagem?</title>
+
+  <!-- Tailwind via CDN: mantém o projeto simples, sem build obrigatório. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte usada no layout do Figma -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div class="site-background" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <h1>Quem é o personagem?</h1>
+      <p>Adivinhe o personagem do rpg</p>
+    </div>
+
+    <button
+      id="menuButton"
+      class="hamburger"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Navegação principal">
+      <a href="#jogo" class="mobile-link active">Jogo</a>
+      <a href="#regras" class="mobile-link">Como jogar</a>
+    </nav>
+  </header>
+
+  <main id="jogo" class="page">
+    <section class="guess-area" aria-label="Área de palpite">
+      <label class="sr-only" for="guessInput">Digite seu palpite</label>
+
+      <div class="guess-input-wrap">
+        <input
+          id="guessInput"
+          type="text"
+          autocomplete="off"
+          placeholder="Digite seu palpite:"
+          aria-autocomplete="list"
+          aria-controls="suggestions"
+        />
+
+        <button id="guessButton" class="dice-button" type="button" aria-label="Confirmar palpite">
+          <img src="assets/dice.png" alt="Dado">
+        </button>
+      </div>
+
+      <div id="suggestions" class="suggestions hidden" role="listbox" aria-label="Personagens"></div>
+    </section>
+
+    <section class="game-panel" aria-label="Resultado dos palpites">
+      <div class="result-grid result-header" aria-hidden="true">
+        <div>Personagem</div>
+        <div>Sistema</div>
+        <div>Gênero</div>
+        <div>Idade</div>
+        <div>Ocupação</div>
+        <div>Afiliação</div>
+        <div>Status</div>
+      </div>
+
+      <div id="results" class="results-list"></div>
+    </section>
+
+    <section id="regras" class="sr-only">
+      <h2>Como jogar</h2>
+      <p>Digite o nome de um personagem e use as cores para comparar os atributos com o personagem do dia.</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
