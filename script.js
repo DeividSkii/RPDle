@@ -3,10 +3,11 @@ const CHARACTERS = [
     id: 1,
     name: "Kethryx Kinji",
     team: "4Team",
-    image: null,
+    image: "./assets/kethryx.png",
     system: "D&D",
     gender: "Masculino",
     age: 18,
+    ageType: "exact",
     occupation: "Player",
     affiliation: ["4Team", "Claret Orders"],
     status: "Vivo"
@@ -19,6 +20,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 90,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "4Team",
     status: "Vivo"
@@ -31,6 +33,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "Player",
     affiliation: ["Penas de Morte", "Mascarados"],
     status: "Vivo"
@@ -43,6 +46,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 24,
+    ageType: "exact",
     occupation: "Player",
     affiliation: ["Penas de Morte", "Claret Orders", "Rainha Corvo"],
     status: "Vivo"
@@ -55,6 +59,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 25,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "Penas de Morte" ,
     status: "Vivo"
@@ -67,6 +72,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 124,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "4Team" ,
     status: "Vivo"
@@ -79,6 +85,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 19,
+    ageType: "exact",
     occupation: "Player",
     affiliation: ["4Team"] ,
     status: "Vivo"
@@ -91,6 +98,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 18,
+    ageType: "exact",
     occupation: "Player",
     affiliation: ["4Team", "Luxon"] ,
     status: "Morto"
@@ -103,6 +111,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 19,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "Família Jagentooth" ,
     status: "Desconhecido"
@@ -115,6 +124,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 70,
+    ageType: "exact",
     occupation: "Player",
     affiliation: ["Penas de Morte", "Asharis do Vento", "Melora"] ,
     status: "Vivo"
@@ -127,6 +137,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 22,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "Bonebreakers" ,
     status: "Desconhecido"
@@ -139,6 +150,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 23,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "Bonebreakers" ,
     status: "Vivo"
@@ -151,6 +163,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 3,
+    ageType: "exact",
     occupation: "Player",
     affiliation: ["Spin-off", "Asharis do Vento"] ,
     status: "Vivo"
@@ -163,6 +176,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 18,
+    ageType: "exact",
     occupation: "Player",
     affiliation: ["Spin-off", "Vax"] ,
     status: "Vivo"
@@ -175,6 +189,7 @@ const CHARACTERS = [
     system: "Assimilação",
     gender: "Masculino",
     age: 29,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "A Ilha" ,
     status: "Vivo"
@@ -187,6 +202,7 @@ const CHARACTERS = [
     system: "Assimilação",
     gender: "Feminino",
     age: 12,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "A Ilha" ,
     status: "Vivo"
@@ -199,6 +215,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 33,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Claret Orders" ,
     status: "Vivo"
@@ -211,6 +228,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 22,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Solitário" ,
     status: "Desconhecido"
@@ -223,6 +241,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 26,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Império Dwendalian" ,
     status: "Desconhecido"
@@ -235,6 +254,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 32,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Estocada Teimosa" ,
     status: "Vivo"
@@ -247,6 +267,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 26,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Solitário" ,
     status: "Vivo"
@@ -259,6 +280,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 35,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Myriad" ,
     status: "Vivo"
@@ -271,6 +293,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Assembleia Cerberus", "Lojista"] ,
     status: "Vivo"
@@ -283,6 +306,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 78,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: ["Assembleia Cerberus", "Império Dwendalian"] ,
     status: "Vivo"
@@ -295,6 +319,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "26",
+    ageType: "exact",
     occupation: "NPC",
     affiliation: ["Chupada Suprema", "4Team"] ,
     status: "Morto"
@@ -307,6 +332,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 18,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: ["Melora"] ,
     status: "Morto"
@@ -319,6 +345,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 25,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: ["Chupada Suprema", "4Team"] ,
     status: "Vivo"
@@ -331,6 +358,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 42,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: ["Chupada Suprema", "4Team"] ,
     status: "Morto"
@@ -343,6 +371,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 23,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Lolth" ,
     status: "Vivo"
@@ -355,6 +384,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: "Devora Tempestades" ,
     status: "Morto"
@@ -367,6 +397,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 21,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Claret Orders" ,
     status: "Desconhecido"
@@ -378,7 +409,8 @@ const CHARACTERS = [
     image: null,
     system: "D&D",
     gender: "Feminino",
-    age: "+1200",
+    age: 1200,
+    ageType: "atLeast",
     occupation: "NPC",
     affiliation: "Dinastia Kryn" ,
     status: "Vivo"
@@ -391,6 +423,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 127,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Dinastia Kryn" ,
     status: "Desconhecido"
@@ -403,6 +436,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 25,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: ["Guarda", "Dinastia Kryn"] ,
     status: "Vivo"
@@ -415,6 +449,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: 127,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Dinastia Kryn" ,
     status: "Vivo"
@@ -427,6 +462,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: "Solitário" ,
     status: "Vivo"
@@ -439,6 +475,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: 20,
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "4Team" ,
     status: "Vivo"
@@ -451,6 +488,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Assembleia Cerberus", "Império Dwendalian"] ,
     status: "Vivo"
@@ -463,6 +501,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Assembleia Cerberus", "Império Dwendalian"] ,
     status: "Vivo"
@@ -475,6 +514,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Lojista", "Bysaes Till"] ,
     status: "Vivo"
@@ -487,6 +527,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "MAsculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Bysaes Till"] ,
     status: "Vivo"
@@ -499,6 +540,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: "Bysaes Till" ,
     status: "Vivo"
@@ -511,6 +553,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: "Claret Orders" ,
     status: "Vivo"
@@ -523,6 +566,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Bysaes Till", "Guarda"] ,
     status: "Vivo"
@@ -535,6 +579,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Feminino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: "Bysaes Till" ,
     status: "Vivo"
@@ -547,6 +592,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: "Desconhecido" ,
     status: "Vivo"
@@ -559,6 +605,7 @@ const CHARACTERS = [
     system: "Call of Cthulhu",
     gender: "Masculino",
     age: 19,
+    ageType: "exact",
     occupation: "Player",
     affiliation: "Desconhecido" ,
     status: "Morto"
@@ -571,6 +618,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "Player",
     affiliation: "Desconhecido" ,
     status: "Morto"
@@ -583,6 +631,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "24",
+    ageType: "exact",
     occupation: "NPC",
     affiliation: "Desconhecido" ,
     status: "Vivo"
@@ -595,6 +644,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Penas de Morte"] ,
     status: "Vivo"
@@ -607,6 +657,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: ["Alma de Cobalto", "Penas de Morte"] ,
     status: "Vivo"
@@ -619,6 +670,7 @@ const CHARACTERS = [
     system: "D&D",
     gender: "Masculino",
     age: "?",
+    ageType: "unknown",
     occupation: "NPC",
     affiliation: "Desconhecido" ,
     status: "Desconhecido"
@@ -640,6 +692,13 @@ const results = document.querySelector("#results");
 const toast = document.querySelector("#toast");
 const menuButton = document.querySelector("#menuButton");
 const mobileMenu = document.querySelector("#mobileMenu");
+const victoryScreen = document.querySelector("#victoryScreen");
+const victoryImage = document.querySelector("#victoryImage");
+const victoryName = document.querySelector("#victoryName");
+const victoryTeam = document.querySelector("#victoryTeam");
+
+const closeVictory = document.querySelector("#closeVictory");
+const closeVictoryButton = document.querySelector("#closeVictoryButton");
 
 function getDailyCharacter(characters) {
   const now = new Date();
@@ -688,7 +747,11 @@ function createSuggestion(character) {
 
   const text = document.createElement("span");
   text.className = "suggestion-name";
-  text.textContent = `${character.name} / ${character.team}`;
+  if(character.team != null){
+    text.textContent = `${character.name} / ${character.team}`;
+  } else {
+    text.textContent = `${character.name}`
+  }
 
   button.append(image, text);
 
@@ -726,27 +789,164 @@ function renderSuggestions(query) {
   suggestions.classList.remove("hidden");
 }
 
-function getComparisonClass(value, targetValue, type) {
-  if (value === targetValue) return "green";
+function compareText(guess, target) {
+    if (guess === target) {
+        return "green";
+    }
 
-  if (type === "age") {
-    const difference = Math.abs(Number(value) - Number(targetValue));
-    if (difference <= 5) return "yellow";
+    return "red";
+}
+
+function compareAge(guess, target) {
+
+    // Se alguma idade for desconhecida,
+    // não dá para determinar se é maior ou menor.
+    if (
+        guess.ageType === "unknown" ||
+        target.ageType === "unknown"
+    ) {
+        return {
+            className: "red",
+            arrow: ""
+        };
+    }
+
+    // O personagem diário possui uma idade exata
+    if (target.ageType === "exact") {
+
+        // Se o palpite também é exato
+        if (guess.ageType === "exact") {
+
+            if (guess.age === target.age) {
+                return {
+                    className: "green",
+                    arrow: ""
+                };
+            }
+
+            if (guess.age > target.age) {
+                return {
+                    className: "red",
+                    arrow: "↓"
+                };
+            }
+
+            return {
+                className: "red",
+                arrow: "↑"
+            };
+        }
+
+        // Palpite possui apenas um limite mínimo
+        if (guess.ageType === "atLeast") {
+
+            if (guess.age > target.age) {
+                return {
+                    className: "red",
+                    arrow: "↓"
+                };
+            }
+
+            return {
+                className: "red",
+                arrow: "↑"
+            };
+        }
+    }
+
+    // O personagem diário possui idade mínima (ex: 1200+)
+    if (target.ageType === "atLeast") {
+
+        if (guess.ageType === "exact") {
+
+            // Palpite abaixo dos 1200 anos
+            if (guess.age < target.age) {
+                return {
+                    className: "red",
+                    arrow: "↓"
+                };
+            }
+
+            // 1200 ou mais satisfaz a informação conhecida
+            return {
+                className: "green",
+                arrow: ""
+            };
+        }
+
+        // Dois limites mínimos
+        if (guess.ageType === "atLeast") {
+            return {
+                className: "green",
+                arrow: ""
+            };
+        }
+    }
+
+    return {
+        className: "red",
+        arrow: ""
+    };
+}
+
+function compareAffiliation(guessAffiliation, targetAffiliation){
+  const guess = Array.isArray(guessAffiliation)
+    ? guessAffiliation
+    : [guessAffiliation];
+
+  const target = Array.isArray(targetAffiliation) ? targetAffiliation : [targetAffiliation]
+
+  const matches = guess.filter(affiliation => target.includes(affiliation))
+
+  //Se todas estao corretas
+  if (matches.length == guess.length &&
+    guess.length == target.length
+  ) {
+    return "green";
+  }
+
+  if (matches.length > 0){
+    return "yellow";
   }
 
   return "red";
+  
 }
 
 function compareCharacter(character, target) {
-  return {
-    character: "red",
-    system: getComparisonClass(character.system, target.system, "text"),
-    gender: getComparisonClass(character.gender, target.gender, "text"),
-    age: getComparisonClass(character.age, target.age, "age"),
-    occupation: getComparisonClass(character.occupation, target.occupation, "text"),
-    affiliation: getComparisonClass(character.affiliation, target.affiliation, "text"),
-    status: getComparisonClass(character.status, target.status, "text")
-  };
+    return {
+        character: character.id === target.id ? "green" : "red",
+
+        system: compareText(
+            character.system,
+            target.system
+        ),
+
+        gender: compareText(
+            character.gender,
+            target.gender
+        ),
+
+        age: compareAge(
+            character,
+            target
+        ),
+
+        occupation: compareText(
+            character.occupation,
+            target.occupation
+        ),
+
+        affiliation: compareAffiliation(
+            character.affiliation,
+            target.affiliation
+        ),
+
+        status: compareText(
+            character.status,
+            target.status
+        )
+    };
 }
 
 function createResultRow(character) {
@@ -766,54 +966,83 @@ function createResultRow(character) {
     { key: "status", text: character.status }
   ];
 
-  cells.forEach(({ key, text }) => {
+ cells.forEach(({ key, text }) => {
     const cell = document.createElement("div");
-    cell.className = `result-cell ${comparison[key]}`;
 
-    if (key === "character") {
-      cell.classList.add("result-person");
+    if (key === "age") {
+        cell.className = `result-cell ${comparison.age.className}`;
 
-      const image = document.createElement("img");
-      image.src = character.image || DEFAULT_IMAGE;
-      image.alt = "";
+        const ageText = document.createElement("span");
+        ageText.textContent = String(text);
 
-      const name = document.createElement("span");
-      name.textContent = text;
+        const arrow = document.createElement("span");
+        arrow.textContent = comparison.age.arrow;
 
-      cell.append(image, name);
+        cell.append(ageText, arrow);
     } else {
-      cell.textContent = String(text);
+        cell.className = `result-cell ${comparison[key]}`;
+
+        if (key === "character") {
+            cell.classList.add("result-person");
+
+            const image = document.createElement("img");
+            image.src = character.image || DEFAULT_IMAGE;
+            image.alt = "";
+
+            const name = document.createElement("span");
+            name.textContent = text;
+
+            cell.append(image, name);
+        } else {
+            cell.textContent = String(text);
+        }
     }
 
     row.appendChild(cell);
-  });
+});
 
   return row;
 }
 
 function submitGuess(character) {
-  if (!character) return;
 
-  const alreadyGuessed = [...results.querySelectorAll(".result-row")]
-    .some(row => row.getAttribute("aria-label") === `Palpite: ${character.name}`);
+    if (!character) return;
 
-  if (alreadyGuessed) {
-    showToast("Você já tentou esse personagem.");
-    return;
-  }
+    const alreadyGuessed = [...results.querySelectorAll(".result-row")]
+        .some(
+            row =>
+                row.getAttribute("aria-label") ===
+                `Palpite: ${character.name}`
+        );
 
-  results.prepend(createResultRow(character));
-  input.value = "";
-  suggestions.classList.add("hidden");
+    if (alreadyGuessed) {
+        showToast("Você já tentou esse personagem.");
+        return;
+    }
 
-  const isCorrect = character.id === TARGET.id;
-  showToast(isCorrect ? "Acertou o personagem do dia!" : "Palpite registrado.");
+    results.prepend(
+        createResultRow(character)
+    );
 
-  if (isCorrect) {
-    input.disabled = true;
-    guessButton.disabled = true;
-    guessButton.style.opacity = ".45";
-  }
+    input.value = "";
+    suggestions.classList.add("hidden");
+
+    const isCorrect =
+        character.id === TARGET.id;
+
+    if (isCorrect) {
+
+        showVictoryScreen(character);
+
+        input.disabled = true;
+        guessButton.disabled = true;
+
+        guessButton.style.opacity = ".45";
+
+        return;
+    }
+
+    showToast("Palpite registrado.");
 }
 
 function showToast(message) {
@@ -843,6 +1072,26 @@ input.addEventListener("keydown", event => {
     }
   }
 });
+
+function showVictoryScreen(character) {
+
+    victoryImage.src = character.image || DEFAULT_IMAGE;
+
+    victoryName.textContent = character.name;
+
+    victoryTeam.textContent = character.team
+        ? character.team
+        : "Sem grupo";
+
+    victoryScreen.classList.remove("hidden");
+}
+
+function hideVictoryScreen() {
+    victoryScreen.classList.add("hidden");
+}
+
+closeVictory.addEventListener("click", hideVictoryScreen);
+closeVictoryButton.addEventListener("click", hideVictoryScreen);
 
 guessButton.addEventListener("click", () => {
   const query = normalizeText(input.value);

@@ -6,10 +6,7 @@
   <meta name="description" content="DLE de personagens do RPG">
   <title>Quem é o personagem?</title>
 
-  <!-- Tailwind via CDN: mantém o projeto simples, sem build obrigatório. -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonte usada no layout do Figma -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -86,6 +83,47 @@
       <p>Digite o nome de um personagem e use as cores para comparar os atributos com o personagem do dia.</p>
     </section>
   </main>
+
+  <div id="victoryScreen" class="victory-screen hidden">
+    <div class="victory-card">
+
+        <button
+            id="closeVictory"
+            class="victory-close"
+            type="button"
+            aria-label="Fechar"
+        >
+            ×
+        </button>
+
+        <div class="victory-title">
+            🎉
+        </div>
+
+        <h2>Você acertou!</h2>
+
+        <p class="victory-subtitle">
+            O personagem do dia era:
+        </p>
+
+        <div class="victory-character">
+            <img id="victoryImage" src="" alt="">
+            <div>
+                <h3 id="victoryName"></h3>
+                <p id="victoryTeam"></p>
+            </div>
+        </div>
+
+        <button
+            id="closeVictoryButton"
+            class="victory-button"
+            type="button"
+        >
+            Continuar
+        </button>
+
+    </div>
+</div>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
