@@ -814,7 +814,7 @@ const CHARACTERS = [
     system: 'D&D',
     gender: 'Masculino',
     age: 1500,
-    ageType: 'atleast',
+    ageType: 'atLeast',
     occupation: 'NPC',
     affiliation: ['Ildan','Orcus'],
     status: 'Vivo',
