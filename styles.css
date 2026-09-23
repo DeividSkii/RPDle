@@ -748,9 +748,13 @@ a {
 .result-person span {
     flex: 1;
     min-width: 0;
+
     text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    line-height: 1.1;
 }
 }
