@@ -525,7 +525,7 @@ const CHARACTERS = [
     team: null,
     image: "./assets/fenian_olawenys.png",
     system: "D&D",
-    gender: "MAsculino",
+    gender: "Masculino",
     age: "?",
     ageType: "unknown",
     occupation: "NPC",
@@ -981,7 +981,7 @@ function getDailyCharacter(characters) {
   const year = now.getUTCFullYear();
   const start = Date.UTC(year, 0, 0);
   const today = Date.UTC(year, now.getUTCMonth(), now.getUTCDate());
-  const dayOfYear = Math.floor((today - start) / 86400000);
+  const dayOfYear = Math.floor((today - start) / 864000000);
 
   // Multiplicador fixo para deixar a escolha determinística no ano.
   const index = (dayOfYear * 37 + year) % characters.length;
@@ -1078,11 +1078,11 @@ function compareAge(guess, target) {
     // Se alguma idade for desconhecida,
     // não dá para determinar se é maior ou menor.
     if (
-        guess.ageType === "unknown" ||
+        guess.ageType === "unknown" &&
         target.ageType === "unknown"
     ) {
         return {
-            className: "red",
+            className: "green",
             arrow: ""
         };
     }
