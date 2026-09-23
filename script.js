@@ -981,7 +981,7 @@ function getDailyCharacter(characters) {
   const year = now.getUTCFullYear();
   const start = Date.UTC(year, 0, 0);
   const today = Date.UTC(year, now.getUTCMonth(), now.getUTCDate());
-  const dayOfYear = Math.floor((today - start) / 864000000);
+  const dayOfYear = Math.floor((today - start) / 86400000);
 
   // Multiplicador fixo para deixar a escolha determinística no ano.
   const index = (dayOfYear * 37 + year) % characters.length;
