@@ -45,9 +45,13 @@ function updateAttempts(){
 
 function getDailyCharacter(characters) {
   const now = new Date();
-  const year = now.getUTCFullYear();
-  const start = Date.UTC(year, 0, 0);
-  const today = Date.UTC(year, now.getUTCMonth(), now.getUTCDate());
+  const year = now.getFullYear();
+  const start = new Date(year, 0, 0)
+  const today = new Date(
+    year,
+    now.getMonth(),
+    now.getDate()
+  )
   const dayOfYear = Math.floor((today - start) / 86400000);
 
   // Multiplicador fixo para deixar a escolha determinística no ano.
