@@ -528,7 +528,7 @@ function getTodayKey() {
 function getTodayGame() {
     const todayKey = getTodayKey();
 
-    const saved = localStorage.getItem(`rpgDle_${todayKey}`);
+    const saved = localStorage.getItem(`rpgDle_2_${todayKey}`);
 
     if (!saved) {
         return {
@@ -568,7 +568,7 @@ function saveGame(game) {
     const todayKey = getTodayKey();
 
     localStorage.setItem(
-        `rpgDle_${todayKey}`,
+        `rpgDle_2_${todayKey}`,
         JSON.stringify(game)
     );
 }
