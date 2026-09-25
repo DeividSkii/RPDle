@@ -18,9 +18,17 @@ const victoryScreen = document.querySelector("#victoryScreen");
 const victoryImage = document.querySelector("#victoryImage");
 const victoryName = document.querySelector("#victoryName");
 const victoryTeam = document.querySelector("#victoryTeam");
+const defeatScreen = document.getElementById("defeatScreen");
+const defeatImage = document.getElementById("defeatImage");
+const defeatName = document.getElementById("defeatName");
+const defeatTeam = document.getElementById("defeatTeam");
+
+
 
 const closeVictory = document.querySelector("#closeVictory");
 const closeVictoryButton = document.querySelector("#closeVictoryButton");
+const closeDefeat = document.getElementById("closeDefeat");
+const closeDefeatButton = document.getElementById("closeDefeatButton");
 const lives = document.querySelector("#lives");
 const attemptsText = document.querySelector("#attemptsText")
 
@@ -264,9 +272,9 @@ function compareCharacter(character, target) {
     return {
         character: character.id === target.id ? "green" : "red",
 
-        system: compareText(
-            character.system,
-            target.system
+        Raça: compareText(
+            character.Raça,
+            target.Raça
         ),
 
         gender: compareText(
@@ -305,7 +313,7 @@ function createResultRow(character) {
 
   const cells = [
     { key: "character", text: `${character.name}` },
-    { key: "system", text: character.system },
+    { key: "Raça", text: character.Raça },
     { key: "gender", text: character.gender },
     { key: "age", text: character.age },
     { key: "occupation", text: character.occupation },
@@ -411,6 +419,9 @@ function submitGuess(character) {
 
     if(updatedGame.guesses.length >= MAX_ATTEMPTS){
         showToast("Você perdeu! Suas 6 tentavias acabaram.")
+
+        showDefeatScreen(TARGET);
+        
         input.disabled = true;
         guessButton.disabled = true;
         guessButton.style.opacity = ".45";
@@ -461,6 +472,18 @@ function showVictoryScreen(character) {
 
     victoryScreen.classList.remove("hidden");
 }
+function showDefeatScreen(character) {
+
+    defeatImage.src = character.image || DEFAULT_IMAGE;
+
+    defeatName.textContent = character.name;
+
+    defeatTeam.textContent = character.team
+        ? character.team
+        : "Sem grupo";
+
+    defeatScreen.classList.remove("hidden");
+}
 
 function hideVictoryScreen() {
     victoryScreen.classList.add("hidden");
@@ -468,6 +491,13 @@ function hideVictoryScreen() {
 
 closeVictory.addEventListener("click", hideVictoryScreen);
 closeVictoryButton.addEventListener("click", hideVictoryScreen);
+
+function hideDefeatScreen() {
+    defeatScreen.classList.add("hidden");
+}
+
+closeDefeat.addEventListener("click", hideDefeatScreen);
+closeDefeatButton.addEventListener("click", hideDefeatScreen);
 
 guessButton.addEventListener("click", () => {
   const query = normalizeText(input.value);
@@ -571,6 +601,19 @@ function saveVictory(character) {
     console.log("Vitória salva:", game);
 }
 
+function saveDefeat(character) {
+    const game = getTodayGame();
+
+    game.won = false;
+    game.lost = true;
+    game.characterId = character.id;
+    game.characterName = character.name;
+
+    saveGame(game);
+
+    console.log("Derrota salva:", game);
+}
+
 
 function restoreTodayGame() {
     const game = getTodayGame();
@@ -588,7 +631,7 @@ function restoreTodayGame() {
             return;
         }
 
-        results.appendChild(
+        results.prepend(
             createResultRow(character)
         );
     });
@@ -596,14 +639,20 @@ function restoreTodayGame() {
     // Se já ganhou, restaura a vitória
     if (game.won) {
 
-        const character = CHARACTERS.find(
-            character => character.id === game.characterId
-        );
+    const character = CHARACTERS.find(
+        character => character.id === game.characterId
+    );
 
-        if (character) {
-            showVictoryScreen(character);
-        }
+    if (character) {
+        showVictoryScreen(character);
+    }
 
+    } else if (game.guesses.length >= MAX_ATTEMPTS) {
+
+        showDefeatScreen(TARGET);
+    }
+
+    if (game.won || game.guesses.length >= MAX_ATTEMPTS) {
         input.disabled = true;
         guessButton.disabled = true;
         guessButton.style.opacity = ".45";

@@ -71,7 +71,7 @@
     <section class="game-panel" aria-label="Resultado dos palpites">
       <div class="result-grid result-header" aria-hidden="true">
         <div>Personagem</div>
-        <div>Sistema</div>
+        <div>Raça</div>
         <div>Gênero</div>
         <div>Idade</div>
         <div>Ocupação</div>
@@ -127,6 +127,47 @@
         </button>
 
     </div>
+</div>
+
+<div id="defeatScreen" class="victory-screen hidden">
+  <div class="victory-card">
+
+      <button 
+          id="closeDefeat" 
+          class="victory-close"
+          type="button" 
+          aria-label="Fechar"
+      >
+          ×
+      </button>
+
+      <div class="defeat-title">
+          💀
+      </div>
+
+      <h2 class="defeat-text">Você perdeu!</h2>
+
+      <p class="victory-subtitle">
+          O personagem do dia era:
+      </p>
+
+      <div class="victory-character">
+          <img id="defeatImage" src="" alt="">
+          <div>
+              <h3 id="defeatName" class="defeat-name"></h3>
+              <p id="defeatTeam"></p>
+          </div>
+      </div>
+
+      <button 
+          id="closeDefeatButton" 
+          class="victory-button"
+          type="button"
+      >
+          Continuar
+      </button>
+
+  </div>
 </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
