@@ -21,6 +21,27 @@ const victoryTeam = document.querySelector("#victoryTeam");
 
 const closeVictory = document.querySelector("#closeVictory");
 const closeVictoryButton = document.querySelector("#closeVictoryButton");
+const lives = document.querySelector("#lives");
+const attemptsText = document.querySelector("#attemptsText")
+
+const MAX_ATTEMPTS = 6;
+
+function updateAttempts(){
+    const game = getTodayGame();
+
+    const used = game.guesses.length
+    const remaining = MAX_ATTEMPTS - used;
+
+    lives.innerHTML = "";
+
+    for(let i = 0; i < MAX_ATTEMPTS; i++){
+
+        const heart = document.createElement("span");
+
+        heart.textContent = i < remaining ? "❤️" :  "🖤";
+        lives.appendChild(heart)
+    } 
+}
 
 function getDailyCharacter(characters) {
   const now = new Date();
@@ -330,6 +351,13 @@ function submitGuess(character) {
 
     if (!character) return;
 
+    const game = getTodayGame();
+
+    if(game.guesses.length >= MAX_ATTEMPTS){
+        showToast("Você não tem mais tentativas.");
+        return;
+    }
+
     const alreadyGuessed = [
         ...results.querySelectorAll(".result-row")
     ].some(
@@ -351,6 +379,9 @@ function submitGuess(character) {
     // Salva o palpite
     saveGuess(character);
 
+    //Atualiza o contador de vidas
+    updateAttempts();
+
     // Limpa o campo
     input.value = "";
     suggestions.classList.add("hidden");
@@ -365,6 +396,17 @@ function submitGuess(character) {
 
         showVictoryScreen(character);
 
+        input.disabled = true;
+        guessButton.disabled = true;
+        guessButton.style.opacity = ".45";
+
+        return;
+    }
+
+    const updatedGame = getTodayGame();
+
+    if(updatedGame.guesses.length >= MAX_ATTEMPTS){
+        showToast("Você perdeu! Suas 6 tentavias acabaram.")
         input.disabled = true;
         guessButton.disabled = true;
         guessButton.style.opacity = ".45";
@@ -562,6 +604,8 @@ function restoreTodayGame() {
         guessButton.disabled = true;
         guessButton.style.opacity = ".45";
     }
+
+    updateAttempts();
 }
 
 document.addEventListener("click", event => {

@@ -507,6 +507,16 @@ a {
     display: none !important;
 }
 
+.lives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
 /* Acessibilidade sem alterar o layout */
 .sr-only {
   position: absolute;
@@ -548,6 +558,8 @@ a {
   .result-row {
     padding: .45rem .55rem;
   }
+
+
 }
 
 /* Mobile */
